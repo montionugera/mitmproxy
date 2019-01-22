@@ -13,3 +13,6 @@ services:
   command: mitmweb --web-iface 0.0.0.0 --set ssl_insecure=true
   tty: true
   container_name: mitmproxy-container
+
+# proxy to yourip:8080
+# monitor to localhost:8081
