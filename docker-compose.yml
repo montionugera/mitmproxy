@@ -1,0 +1,15 @@
+version: "3"
+services:
+ mitmproxy:
+  image: mitmproxy/mitmproxy
+  ports:
+   - "8080:8080"
+   - "8081:8081"
+  expose:
+   - "8080"
+  volumes:
+   - ./mitmproxy-cer:/home/mitmproxy/.mitmproxy
+  stdin_open: true
+  command: mitmweb --web-iface 0.0.0.0 --set ssl_insecure=true
+  tty: true
+  container_name: mitmproxy-container
